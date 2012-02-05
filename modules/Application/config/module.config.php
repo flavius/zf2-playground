@@ -7,16 +7,18 @@ return array(
             'class' => array(
                 // We want to add a renderer to Zend\View\View, so we create a 
                 // definition for the addRenderer() method.
+                /* */
                 'Zend\View\View' => array(
                     'addRenderer' => array(
                         'renderer' => array('type' => 'Zend\View\Renderer', 'required' => true)
                     )
                 ),
+                /* *
                 'Zend\View\HelperBroker' => array(
                     'setView' => array(
                         'view' => array('type' => 'Zend\View\View', 'required' => true),
                     )
-                ),
+                ),/* */
             )
         ),
         

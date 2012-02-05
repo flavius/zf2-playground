@@ -8,7 +8,7 @@ use Zend\EventManager\StaticEventManager;
 use ZFCompat\View\Listener as ViewListener;
 use ZFCompat\Module\Renderable;
 
-class Module extends Renderable implements AutoloaderProvider, Configurable {
+class Module implements AutoloaderProvider, Configurable {
     protected $cfg = NULL;
     
     protected $view;
@@ -19,6 +19,16 @@ class Module extends Renderable implements AutoloaderProvider, Configurable {
         $events = StaticEventManager::getInstance();
         $events->attach('bootstrap', 'bootstrap', array($this, 'initializeView'), 100);
     }
+    
+    public function initializeView($e) {
+        $app = $e->getParam('application');
+        $config = $e->getParam('config');
+        $locator = $app->getLocator();
+        
+        $listener = $locator->get('Zend\Mvc\View\DefaultRenderingStrategy');
+        $app->events()->attachAggregate($listener);
+    }
+    
     
     public function getConfig() {
         if($this->cfg == NULL) {
