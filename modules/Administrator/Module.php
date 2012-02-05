@@ -8,7 +8,7 @@ use Zend\EventManager\StaticEventManager;
 use ZFCompat\View\Listener as ViewListener;
 use ZFCompat\Module\Renderable;
 
-class Module extends Renderable implements AutoloaderProvider, Configurable {
+class Module implements AutoloaderProvider, Configurable {
     protected $cfg = NULL;
     
     protected $view;
