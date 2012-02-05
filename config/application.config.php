@@ -2,7 +2,7 @@
 return array(
     'modules' => array(
         'Application',
-        'Administrator',
+//        'Administrator',
     ),
     'module_listener_options' => array(
         'config_cache_enabled' => false,
