@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\View;
+namespace ZFCompat\View;
 
 use ArrayAccess,
     Zend\Di\Locator,

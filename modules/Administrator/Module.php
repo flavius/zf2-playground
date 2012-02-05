@@ -1,5 +1,5 @@
 <?php
-namespace Application;
+namespace Administrator;
 
 use Zend\Module\Consumer\AutoloaderProvider;
 use ZFCompat\Module\Configurable;
